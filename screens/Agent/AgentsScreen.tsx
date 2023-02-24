@@ -26,20 +26,47 @@ export const AgentsScreen = () => {
         <StyledTitle title={DRAWER_STRINGS.AGENTS} />
         <StyledParagraph text={Strings.AGENTS_DESC} />
       </View>
-      {/* <View style={styles.listContainer}> */}
       <FlatList
         data={data.data}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity style={styles.cardContainer}>
-              <Image
-                source={{
-                  uri: item.fullPortrait,
-                }}
-                style={styles.imgStyle}
-                resizeMode='cover'
-              />
-            </TouchableOpacity>
+            item.isPlayableCharacter && (
+              <TouchableOpacity
+                style={[
+                  styles.cardContainer,
+                  { backgroundColor: `#${item.backgroundGradientColors[2]}` },
+                ]}
+              >
+                <Image
+                  style={styles.imgBackgroundStyle}
+                  source={{ uri: item.background }}
+                  // resizeMode='contain'
+                />
+                <Image
+                  source={{
+                    uri: item.fullPortrait,
+                  }}
+                  style={styles.imgStyle}
+                  resizeMode='cover'
+                />
+                <View style={styles.descContainer}>
+                  <Text style={styles.agentName}>{item.displayName}</Text>
+                  <Text style={styles.roleStyle}>{item.role.displayName}</Text>
+                  <View style={styles.abilityIconContainer}>
+                    {item.abilities.map((ability: any, index: number) => {
+                      return (
+                        <Image
+                          source={{ uri: ability.displayIcon }}
+                          key={index}
+                          style={styles.abilityIconStyle}
+                          resizeMode='cover'
+                        />
+                      );
+                    })}
+                  </View>
+                </View>
+              </TouchableOpacity>
+            )
           );
         }}
         keyExtractor={(agent) => agent.uuid}
@@ -74,8 +101,38 @@ const styles = StyleSheet.create({
     // borderColor: 'red',
     // flex: 1,
   },
+  descContainer: {
+    position: 'absolute',
+    width: 230,
+    left: 150,
+    top: 40,
+    // borderWidth: 1,
+    // borderColor: 'red',
+  },
+  agentName: {
+    fontFamily: 'Valorant-Font',
+    color: appColor.sunburntCyclopsRed,
+    fontSize: 34,
+  },
+  roleStyle: {
+    fontFamily: 'Oswald-Light',
+    fontSize: 16,
+    color: appColor.milkWhite,
+    marginTop: -5,
+    marginBottom: 5,
+  },
+  abilityIconContainer: {
+    flexDirection: 'row',
+  },
+  abilityIconStyle: {
+    width: 20,
+    height: 20,
+    marginRight: 3,
+  },
   cardContainer: {
-    backgroundColor: appColor.milkWhite,
+    // backgroundColor: appColor.eerieBlack,
+    // borderWidth: 1,
+    // borderColor: appColor.milkWhite,
     height: 150,
     width: 380,
     marginTop: 40,
@@ -94,5 +151,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: '-5%',
+  },
+  imgBackgroundStyle: {
+    width: 200,
+    height: 150,
+    position: 'absolute',
+    bottom: 0,
+    left: '-5%',
+    opacity: 0.1,
   },
 });

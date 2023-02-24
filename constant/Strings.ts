@@ -8,8 +8,8 @@ export const SCREEN_NAMES = {
 };
 
 export const DRAWER_STRINGS = {
-  AGENTS: 'Agents',
-  HOME: 'Home',
+  AGENTS: '//Agents',
+  HOME: 'vALORaNT',
   BUNDLE: 'Bundle',
   TIER: 'Tier',
   MAPS: 'Maps',
@@ -18,4 +18,6 @@ export const DRAWER_STRINGS = {
 
 export const Strings = {
   LOGO: 'vALORaNT',
+  AGENTS_DESC:
+    '// Agents are the playable characters in VALORANT, representing an agent of the VALORANT Protocol. Each agent serves as a different class with four abilities and are mostly unlocked by progressing through their Contract.',
 };

@@ -2,8 +2,11 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { MainNavigator } from './navigation/MainNavigator';
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [font] = useFonts({
@@ -19,10 +22,11 @@ export default function App() {
   if (!font) return;
 
   return (
-    <NavigationContainer>
-      <StatusBar style='light' backgroundColor='#0a1118' />
-      {/* <Text style={styles.textStyle}>vALORaNT</Text> */}
-      <MainNavigator />
-    </NavigationContainer>
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <StatusBar style='light' backgroundColor='#0a1118' />
+        <MainNavigator />
+      </NavigationContainer>
+    </QueryClientProvider>
   );
 }

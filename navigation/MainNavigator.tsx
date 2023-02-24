@@ -47,7 +47,7 @@ export const MainNavigator = () => {
         name={DRAWER_STRINGS.HOME}
         component={HomeScreen}
         options={{
-          title: 'Home',
+          title: '//Home',
         }}
       />
       <Drawer.Screen name={DRAWER_STRINGS.AGENTS} component={AgentsScreen} />

@@ -1,24 +1,28 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { NavigationContainer } from '@react-navigation/native';
+
+import { MainNavigator } from './navigation/MainNavigator';
 
 export default function App() {
+  const [font] = useFonts({
+    'Valorant-Font': require('./assets/font/Valorant-Font.ttf'),
+    'Oswald-Light': require('./assets/font/Oswald-Light.ttf'),
+    'Oswald-ExtraLight': require('./assets/font/Oswald-ExtraLight.ttf'),
+    'Oswald-Regular': require('./assets/font/Oswald-Regular.ttf'),
+    'Oswald-SemiBold': require('./assets/font/Oswald-SemiBold.ttf'),
+    'Oswald-Medium': require('./assets/font/Oswald-Medium.ttf'),
+    'Oswald-Bold': require('./assets/font/Oswald-Bold.ttf'),
+  });
+
+  if (!font) return;
+
   return (
-    <SafeAreaView
-      style={{ flex: 1, borderWidth: 1, borderColor: 'red', marginTop: 10 }}
-    >
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style='auto' />
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <StatusBar style='light' backgroundColor='#0a1118' />
+      {/* <Text style={styles.textStyle}>vALORaNT</Text> */}
+      <MainNavigator />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -5,6 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { MainNavigator } from './navigation/MainNavigator';
+// import { AgentStack } from './navigation/AgentStack';
+// import { MainStackNavigator } from './navigation/MainStackNavigator';
+import { appColor } from './constant';
 
 const queryClient = new QueryClient();
 
@@ -24,8 +27,13 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        <StatusBar style='light' backgroundColor='#0a1118' />
+        <StatusBar
+          style='light'
+          backgroundColor={appColor.sunburntCyclopsRed}
+        />
         <MainNavigator />
+        {/* <MainStackNavigator /> */}
+        {/* <AgentStack /> */}
       </NavigationContainer>
     </QueryClientProvider>
   );

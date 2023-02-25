@@ -8,22 +8,12 @@ type StyledDefaultHeaderProps = {
 export const StyledDefaultHeader = ({
   headerTitleProp,
 }: StyledDefaultHeaderProps) => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>{headerTitleProp}</Text>
-    </View>
-  );
+  return <Text style={styles.textStyle}>{headerTitleProp}</Text>;
 };
 
 const styles = StyleSheet.create({
-  container: {
-    width: 285,
-    height: '100%',
-    justifyContent: 'center',
-  },
   textStyle: {
     color: appColor.eerieBlack,
-    textAlign: 'center',
     fontFamily: 'Valorant-Font',
     fontSize: 24,
   },

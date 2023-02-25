@@ -8,3 +8,10 @@ export const getAgents = () => {
   );
   return { data, error, isLoading };
 };
+
+export const getAgent = (agentId: string) => {
+  const { data, error, isLoading } = useQuery('Agent', () =>
+    fetch(`${BASE_URL}/agents/${agentId}`).then((res) => res.json())
+  );
+  return { data, error, isLoading };
+};

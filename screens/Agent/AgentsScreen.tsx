@@ -55,6 +55,11 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
                   // resizeMode='contain'
                 />
                 <Image
+                  style={styles.imgRoleBackgroundStyle}
+                  source={{ uri: item.role.displayIcon }}
+                  // resizeMode='contain'
+                />
+                <Image
                   source={{
                     uri: item.fullPortrait,
                   }}
@@ -170,6 +175,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     left: '-5%',
+    opacity: 0.1,
+  },
+  imgRoleBackgroundStyle: {
+    width: 80,
+    height: 80,
+    position: 'absolute',
+    bottom: 36,
+    right: '5%',
     opacity: 0.1,
   },
 });

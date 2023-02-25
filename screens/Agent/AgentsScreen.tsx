@@ -11,12 +11,14 @@ import {
 import { StyledLayout } from '../../components/StyledLayout';
 import { StyledParagraph, StyledTitle } from '../../components';
 import { DRAWER_STRINGS, Strings } from '../../constant';
-import { appColor } from '../../constant';
+import { appColor, SCREEN_NAMES } from '../../constant';
 import { Agents } from '../../api/Agents';
 import { getAgents } from '../../api/Api';
+import { useNavigation } from '@react-navigation/native';
 
-export const AgentsScreen = () => {
+export const AgentsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getAgents();
+  // const navigation = useNavigation();
 
   if (isLoading) return <Text>Loading...</Text>;
 
@@ -36,6 +38,7 @@ export const AgentsScreen = () => {
                   styles.cardContainer,
                   { backgroundColor: `#${item.backgroundGradientColors[2]}` },
                 ]}
+                onPress={() => navigation.navigate(SCREEN_NAMES.AGENT_SCREEN)}
               >
                 <Image
                   style={styles.imgBackgroundStyle}

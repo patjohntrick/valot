@@ -4,7 +4,7 @@ import { HomeScreen } from '../screens/Home/HomeScreen';
 import { AgentStack } from './AgentStack';
 import { HomeStack } from './HomeStack';
 import { AgentsScreen } from '../screens/Agent/AgentsScreen';
-import { DRAWER_STRINGS, appColor } from '../constant/';
+import { DRAWER_STRINGS, SCREEN_NAMES, Strings, appColor } from '../constant/';
 import { StyledDefaultHeader } from '../components/StyledDefaultHeader';
 import { Octicons, Feather } from '@expo/vector-icons';
 import { View, Text } from 'react-native';
@@ -14,10 +14,10 @@ const Drawer = createDrawerNavigator();
 export const MainNavigator = () => {
   return (
     <Drawer.Navigator
-      initialRouteName={DRAWER_STRINGS.HOME}
       screenOptions={{
+        // header
         headerTitle: () => (
-          <StyledDefaultHeader headerTitleProp={DRAWER_STRINGS.HOME} />
+          <StyledDefaultHeader headerTitleProp={Strings.LOGO} />
         ),
         headerStyle: {
           backgroundColor: appColor.sunburntCyclopsRed,
@@ -31,6 +31,8 @@ export const MainNavigator = () => {
             style={{ marginRight: 15 }}
           />
         ),
+        headerTitleAlign: 'center',
+        // drawer
         drawerContentStyle: { backgroundColor: appColor.eerieBlack },
         drawerType: 'slide',
         drawerActiveBackgroundColor: appColor.eerieBlack,
@@ -43,14 +45,8 @@ export const MainNavigator = () => {
         drawerStyle: { backgroundColor: appColor.eerieBlack, width: 250 },
       }}
     >
-      <Drawer.Screen
-        name={DRAWER_STRINGS.HOME}
-        component={HomeScreen}
-        options={{
-          title: '//Home',
-        }}
-      />
-      <Drawer.Screen name={DRAWER_STRINGS.AGENTS} component={AgentsScreen} />
+      <Drawer.Screen name={DRAWER_STRINGS.HOME} component={HomeStack} />
+      <Drawer.Screen name={DRAWER_STRINGS.AGENTS} component={AgentStack} />
     </Drawer.Navigator>
   );
 };

@@ -5,15 +5,16 @@ export const SCREEN_NAMES = {
   TIER_SCREEN: 'TierScreen',
   MAPS_SCREEN: 'MapsScreen',
   WEAPONS_SCREEN: 'WeaponsScreen',
+  AGENT_SCREEN: 'AgentScreen',
 };
 
 export const DRAWER_STRINGS = {
   AGENTS: '//Agents',
-  HOME: 'vALORaNT',
-  BUNDLE: 'Bundle',
-  TIER: 'Tier',
-  MAPS: 'Maps',
-  WEAPONS: 'Weapons',
+  HOME: '//Home',
+  BUNDLE: '//Bundle',
+  TIER: '//Tier',
+  MAPS: '//Maps',
+  WEAPONS: '//Weapons',
 };
 
 export const Strings = {

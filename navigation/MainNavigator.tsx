@@ -15,24 +15,6 @@ export const MainNavigator = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
-        // header
-        headerTitle: () => (
-          <StyledDefaultHeader headerTitleProp={Strings.LOGO} />
-        ),
-        headerStyle: {
-          backgroundColor: appColor.sunburntCyclopsRed,
-          height: 100,
-        },
-        headerRight: () => (
-          <Feather
-            name='user'
-            size={20}
-            color='black'
-            style={{ marginRight: 15 }}
-          />
-        ),
-        headerTitleAlign: 'center',
-        // drawer
         drawerContentStyle: { backgroundColor: appColor.eerieBlack },
         drawerType: 'slide',
         drawerActiveBackgroundColor: appColor.eerieBlack,
@@ -43,6 +25,7 @@ export const MainNavigator = () => {
           borderBottomColor: appColor.milkWhite,
         },
         drawerStyle: { backgroundColor: appColor.eerieBlack, width: 250 },
+        headerShown: false,
       }}
     >
       <Drawer.Screen name={DRAWER_STRINGS.HOME} component={HomeStack} />

@@ -8,6 +8,8 @@ import { MainNavigator } from './navigation/MainNavigator';
 // import { AgentStack } from './navigation/AgentStack';
 // import { MainStackNavigator } from './navigation/MainStackNavigator';
 import { appColor } from './constant';
+import { Provider } from 'react-redux';
+import { Store } from './redux/Store';
 
 const queryClient = new QueryClient();
 
@@ -25,16 +27,18 @@ export default function App() {
   if (!font) return;
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <StatusBar
-          style='light'
-          backgroundColor={appColor.sunburntCyclopsRed}
-        />
-        <MainNavigator />
-        {/* <MainStackNavigator /> */}
-        {/* <AgentStack /> */}
-      </NavigationContainer>
-    </QueryClientProvider>
+    <Provider store={Store}>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <StatusBar
+            style='light'
+            backgroundColor={appColor.sunburntCyclopsRed}
+          />
+          <MainNavigator />
+          {/* <MainStackNavigator /> */}
+          {/* <AgentStack /> */}
+        </NavigationContainer>
+      </QueryClientProvider>
+    </Provider>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,18 +9,27 @@ import {
   ScrollView,
 } from 'react-native';
 import { StyledLayout } from '../../components/StyledLayout';
-import { StyledParagraph, StyledTitle } from '../../components';
+import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
 import { DRAWER_STRINGS, Strings } from '../../constant';
 import { appColor, SCREEN_NAMES } from '../../constant';
 import { Agents } from '../../api/Agents';
 import { getAgents } from '../../api/Api';
-import { useNavigation } from '@react-navigation/native';
+import { setAgent, removeAgent } from '../../redux/slice/AgentSlice';
+import { useRoute } from '@react-navigation/native';
+
+import { useSelector, useDispatch } from 'react-redux';
 
 export const AgentsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getAgents();
-  // const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const agent = useSelector((state: any) => state.agent.agent);
+  const route = useRoute();
 
-  if (isLoading) return <Text>Loading...</Text>;
+  const handleClick = (agentId: string) => {
+    navigation.navigate(SCREEN_NAMES.AGENT_SCREEN, { agentId });
+  };
+
+  if (isLoading) return <StyledLoader />;
 
   return (
     <View style={styles.container}>
@@ -38,7 +47,7 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
                   styles.cardContainer,
                   { backgroundColor: `#${item.backgroundGradientColors[2]}` },
                 ]}
-                onPress={() => navigation.navigate(SCREEN_NAMES.AGENT_SCREEN)}
+                onPress={() => handleClick(item.uuid)}
               >
                 <Image
                   style={styles.imgBackgroundStyle}

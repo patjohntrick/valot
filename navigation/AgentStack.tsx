@@ -7,13 +7,20 @@ import {
 import { AgentsScreen } from '../screens/Agent/AgentsScreen';
 import { AgentScreen } from '../screens/Agent/AgentScreen';
 import { SCREEN_NAMES, appColor } from '../constant';
-import { StyledBar, StyledDefaultHeader, StyledUserBar } from '../components';
+import {
+  StyledBackBar,
+  StyledBar,
+  StyledDefaultHeader,
+  StyledUserBar,
+} from '../components';
 import { Octicons, Feather } from '@expo/vector-icons';
 import { View } from 'react-native';
+import { useState } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 export const AgentStack = ({ navigation }: { navigation: any }) => {
+  const [isAgent, setIsAgent] = useState(false);
   return (
     <Stack.Navigator
       screenOptions={{
@@ -43,7 +50,10 @@ export const AgentStack = ({ navigation }: { navigation: any }) => {
       <Stack.Screen
         name={SCREEN_NAMES.AGENT_SCREEN}
         component={AgentScreen}
-        options={{ headerLeft: undefined }}
+        options={{
+          // headerLeft: () => <StyledBackBar navigation={navigation} />,
+          headerLeft: undefined,
+        }}
       />
     </Stack.Navigator>
   );

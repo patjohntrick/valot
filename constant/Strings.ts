@@ -19,6 +19,10 @@ export const DRAWER_STRINGS = {
 
 export const Strings = {
   LOGO: 'vALORaNT',
+  ABILITIES: 'ABILITIES',
   AGENTS_DESC:
     '// Agents are the playable characters in VALORANT, representing an agent of the VALORANT Protocol. Each agent serves as a different class with four abilities and are mostly unlocked by progressing through their Contract.',
+  AGENTS_ABILITY_DESC:
+    'Abilities are tools that are available to be used by agents in addition to the weapons that they carry. Each ability in VALORANT is unique, though some share similarities. All agents have three types of abilities; basic, signature, and ultimate.',
+  ANIMATED_TEXT: 'DEFY THE\nLIMITS',
 };

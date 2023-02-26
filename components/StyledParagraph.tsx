@@ -8,7 +8,7 @@ type StyledParagraphProps = {
 };
 
 export const StyledParagraph = ({ text, style }: StyledParagraphProps) => {
-  return <Text style={[style, styles.textStyle]}>{text}</Text>;
+  return <Text style={[styles.textStyle, style]}>{text}</Text>;
 };
 
 const styles = StyleSheet.create({
@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
     lineHeight: 24,
+    textAlign: 'justify',
   },
 });

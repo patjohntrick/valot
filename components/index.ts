@@ -8,3 +8,4 @@ export * from './StyledUserBar';
 export * from './StyledBackBar';
 export * from './StyledLoader';
 export * from './StyledSubTitle';
+export * from './StyledDot';

@@ -6,18 +6,18 @@ import {
   StyledSubTitle,
 } from '../../components';
 import { useSelector } from 'react-redux';
-import { appColor } from '../../constant';
+import { Strings, appColor } from '../../constant';
 import {
   NavigationHelpers,
   NavigationProp,
   NavigationState,
   useRoute,
 } from '@react-navigation/native';
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAgent, removeAgent } from '../../redux/slice/AgentSlice';
 import { SCREEN_NAMES } from '../../constant';
 import { getAgent } from '../../api/Api';
+import { useEffect } from 'react';
 
 type AgentScreenProps = {
   navigation: any;
@@ -26,15 +26,6 @@ type AgentScreenProps = {
 export const AgentScreen = ({ navigation }: AgentScreenProps) => {
   const { params } = useRoute();
   const { data, error, isLoading } = getAgent(params?.agentId);
-
-  // const {
-  //   displayName,
-  //   background,
-  //   fullPortrait,
-  //   role,
-  //   description,
-  //   abilities,
-  // } = data?.data;
 
   if (isLoading) return <StyledLoader />;
 
@@ -56,11 +47,19 @@ export const AgentScreen = ({ navigation }: AgentScreenProps) => {
       <StyledSubTitle text={data.data.role.displayName} />
       <StyledParagraph text={data.data.description} />
       <View style={styles.skillContainer}>
-        <StyledSubTitle text={'Skills'} style={styles.titleStyle} />
+        <StyledSubTitle text={Strings.ABILITIES} style={styles.titleStyle} />
+        <StyledParagraph
+          text={Strings.AGENTS_ABILITY_DESC}
+          style={styles.abilityDescStyle}
+        />
         <View style={styles.skillInnerContainer}>
           {data.data.abilities.map((ability: any, index: number) => {
             return (
               <TouchableOpacity key={index}>
+                <StyledSubTitle
+                  text={ability.displayName}
+                  style={styles.abilityNameStyle}
+                />
                 <Image
                   resizeMode='cover'
                   style={styles.skillImg}
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
   titleStyle: {
     color: appColor.eerieBlack,
     textAlign: 'center',
+    textTransform: 'capitalize',
   },
   heroContainer: {
     position: 'relative',
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 20,
     paddingBottom: 15,
+    paddingHorizontal: 15,
   },
   skillInnerContainer: {
     flexDirection: 'row',
@@ -136,5 +137,15 @@ const styles = StyleSheet.create({
     // borderColor: appColor.milkWhite,
     borderRadius: 5,
     marginHorizontal: 10,
+  },
+  abilityDescStyle: {
+    color: appColor.eerieBlack,
+    marginBottom: 10,
+  },
+  abilityNameStyle: {
+    color: appColor.milkWhite,
+    fontSize: 10,
+    textAlign: 'center',
+    marginBottom: 10,
   },
 });

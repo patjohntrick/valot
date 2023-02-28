@@ -8,6 +8,7 @@ import { DRAWER_STRINGS, SCREEN_NAMES, Strings, appColor } from '../constant/';
 import { StyledDefaultHeader } from '../components/StyledDefaultHeader';
 import { Octicons, Feather } from '@expo/vector-icons';
 import { View, Text } from 'react-native';
+import { MapStack } from './MapStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -30,6 +31,7 @@ export const MainNavigator = () => {
     >
       <Drawer.Screen name={DRAWER_STRINGS.HOME} component={HomeStack} />
       <Drawer.Screen name={DRAWER_STRINGS.AGENTS} component={AgentStack} />
+      <Drawer.Screen name={DRAWER_STRINGS.MAPS} component={MapStack} />
     </Drawer.Navigator>
   );
 };

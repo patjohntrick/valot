@@ -15,3 +15,10 @@ export const getAgent = (agentId: string) => {
   );
   return { data, error, isLoading };
 };
+
+export const getMaps = () => {
+  const { data, error, isLoading } = useQuery('Maps', () =>
+    fetch(`${BASE_URL}/maps`).then((res) => res.json())
+  );
+  return { data, error, isLoading };
+};

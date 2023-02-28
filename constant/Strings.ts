@@ -25,4 +25,6 @@ export const Strings = {
   AGENTS_ABILITY_DESC:
     'Abilities are tools that are available to be used by agents in addition to the weapons that they carry. Each ability in VALORANT is unique, though some share similarities. All agents have three types of abilities; basic, signature, and ultimate.',
   ANIMATED_TEXT: 'DEFY THE\nLIMITS',
+  MAP_DESC:
+    'Each match of VALORANT takes place on a map. Maps feature a spawn area for each team, barriers that limit accessible areas during the Buy Phase, and objective sites where the spike is to be planted. Four maps were available at launch, and a six-month cycle is expected for the release of new maps.',
 };

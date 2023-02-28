@@ -12,7 +12,6 @@ import { StyledLayout } from '../../components/StyledLayout';
 import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
 import { DRAWER_STRINGS, Strings } from '../../constant';
 import { appColor, SCREEN_NAMES } from '../../constant';
-import { Agents } from '../../api/Agents';
 import { getAgents } from '../../api/Api';
 import { setAgent, removeAgent } from '../../redux/slice/AgentSlice';
 import { useRoute } from '@react-navigation/native';
@@ -87,7 +86,7 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
           );
         }}
         keyExtractor={(agent) => agent.uuid}
-        style={styles.agentContainer}
+        contentContainerStyle={{ alignItems: 'center', paddingBottom: 20 }}
       />
     </View>
     // </View>

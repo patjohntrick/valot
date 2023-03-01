@@ -10,4 +10,5 @@ export const appColor = {
 
   black: '#000000',
   eerieBlack: '#0f1923',
+  chineseBlack: '#0d151d',
 };

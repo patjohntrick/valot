@@ -22,3 +22,10 @@ export const getMaps = () => {
   );
   return { data, error, isLoading };
 };
+
+export const getWeapons = () => {
+  const { data, error, isLoading } = useQuery('Weapons', () =>
+    fetch(`${BASE_URL}/weapons`).then((res) => res.json())
+  );
+  return { data, error, isLoading };
+};

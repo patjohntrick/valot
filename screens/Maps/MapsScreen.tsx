@@ -6,7 +6,12 @@ import {
   Image,
 } from 'react-native';
 import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
-import { DRAWER_STRINGS, Strings, globalStyles } from '../../constant';
+import {
+  DRAWER_STRINGS,
+  Strings,
+  appColor,
+  globalStyles,
+} from '../../constant';
 import { getMaps } from '../../api/Api';
 
 export const MapsScreen = () => {
@@ -52,9 +57,9 @@ const styles = StyleSheet.create({
     // backgroundColor: appColor.eerieBlack,
     // borderWidth: 1,
     // borderColor: appColor.milkWhite,
-    height: 150,
+    height: 200,
     width: 380,
-    marginTop: 40,
+    marginTop: 20,
     borderRadius: 10,
     // marginVertical: 7,
     // borderWidth: 1,

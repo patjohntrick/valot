@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   cardContainer: {
-    // backgroundColor: appColor.eerieBlack,
+    backgroundColor: appColor.chineseBlack,
     // borderWidth: 1,
     // borderColor: appColor.milkWhite,
     height: 150,
     width: 380,
     marginTop: 20,
-    borderRadius: 5,
+    borderRadius: 10,
     // marginVertical: 7,
     // borderWidth: 1,
     // borderColor: 'red',
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   cardInnerContainer: {
     // backgroundColor: appColor.grayAsparagusGreen,
-    borderRadius: 5,
+    borderRadius: 10,
     padding: 20,
   },
 });

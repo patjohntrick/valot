@@ -27,4 +27,6 @@ export const Strings = {
   ANIMATED_TEXT: 'DEFY THE\nLIMITS',
   MAP_DESC:
     'Each match of VALORANT takes place on a map. Maps feature a spawn area for each team, barriers that limit accessible areas during the Buy Phase, and objective sites where the spike is to be planted. Four maps were available at launch, and a six-month cycle is expected for the release of new maps.',
+  WEAPON_DESC:
+    'Weapons are separated by two categories, Sidearms and Primary weapons. Sidearms consists of pistols, whilst primaries include SMGs, shotguns, rifles, sniper rifles, and machine guns. Guns have limited amounts of ammo but come with reserve magazines.',
 };

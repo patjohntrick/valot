@@ -3,6 +3,9 @@ export const appColor = {
   watermelonRed: '#BD3944',
   caputMortuumRed: '#53212B',
 
+  grayAsparagusGreen: '#607760',
+  mintGreen: '#48a67e',
+
   milkWhite: '#FFFBF5',
 
   black: '#000000',

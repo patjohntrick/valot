@@ -10,13 +10,18 @@ import {
 import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
 import { SCREEN_NAMES, Strings, appColor, globalStyles } from '../../constant';
 import { getWeapons } from '../../api/Api';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 export const WeaponsScreen = ({ navigation }: { navigation: any }) => {
+  const [weapon, setWeapon] = useState<any[]>([]);
   const { data, error, isLoading } = getWeapons();
-  if (isLoading) return <StyledLoader />;
+
   const handleClick = (weaponId: string) => {
-    navigation.navigate(SCREEN_NAMES.WEAPON_SCREEN, { weaponId });
+    const weapon = data.data.filter((weapon: any) => weapon.uuid === weaponId);
+    navigation.navigate(SCREEN_NAMES.WEAPON_SCREEN, { weapon: weapon[0] });
   };
+
+  if (isLoading) return <StyledLoader />;
   return (
     <View style={globalStyles.container}>
       <View style={styles.textStyle}>

@@ -8,12 +8,15 @@ import {
   Text,
 } from 'react-native';
 import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
-import { Strings, appColor, globalStyles } from '../../constant';
+import { SCREEN_NAMES, Strings, appColor, globalStyles } from '../../constant';
 import { getWeapons } from '../../api/Api';
 
-export const WeaponsScreen = () => {
+export const WeaponsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getWeapons();
   if (isLoading) return <StyledLoader />;
+  const handleClick = (weaponId: string) => {
+    navigation.navigate(SCREEN_NAMES.WEAPON_SCREEN, { weaponId });
+  };
   return (
     <View style={globalStyles.container}>
       <View style={styles.textStyle}>
@@ -29,7 +32,10 @@ export const WeaponsScreen = () => {
         keyExtractor={(weapon) => weapon.uuid}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity style={styles.cardContainer}>
+            <TouchableOpacity
+              style={styles.cardContainer}
+              onPress={() => handleClick(item.uuid)}
+            >
               <View style={styles.cardInnerContainer}>
                 <Image
                   resizeMode='contain'

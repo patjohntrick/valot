@@ -29,3 +29,10 @@ export const getWeapons = () => {
   );
   return { data, error, isLoading };
 };
+
+export const getWeapon = (weaponId: string) => {
+  const { data, error, isLoading } = useQuery('Weapon', () =>
+    fetch(`${BASE_URL}/weapons/${weaponId}`).then((res) => res.json())
+  );
+  return { data, error, isLoading };
+};

@@ -35,4 +35,5 @@ export const Strings = {
   COST: 'Cost',
   CATEGORY: 'Category',
   DAMAGE_RANGES: 'Damage Ranges',
+  BODY_PARTS: ['HEAD', 'BODY', 'LEG'],
 };

@@ -18,7 +18,12 @@ export const WeaponsScreen = ({ navigation }: { navigation: any }) => {
 
   const handleClick = (weaponId: string) => {
     const weapon = data.data.filter((weapon: any) => weapon.uuid === weaponId);
-    navigation.navigate(SCREEN_NAMES.WEAPON_SCREEN, { weapon: weapon[0] });
+    navigation.navigate(
+      weapon[0].uuid === Strings.MELEE_ID
+        ? SCREEN_NAMES.WEAPON_SKINS_SCREEN
+        : SCREEN_NAMES.WEAPON_SCREEN,
+      { weapon: weapon[0], skins: weapon[0].skins }
+    );
   };
 
   if (isLoading) return <StyledLoader />;

@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react';
 import { StyleSheet, Text } from 'react-native';
+
 import { appColor } from '../constant';
 
 type StyledTitleProps = {

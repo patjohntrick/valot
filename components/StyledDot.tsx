@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+
 import { Strings, appColor } from '../constant';
 
 export const StyledDot = () => {

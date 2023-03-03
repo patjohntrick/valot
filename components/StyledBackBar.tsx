@@ -1,5 +1,5 @@
-import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 type StyledBackBarProps = {
   navigation: any;

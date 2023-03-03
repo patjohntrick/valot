@@ -1,7 +1,8 @@
 import { TouchableOpacity } from 'react-native';
-import { Feather } from '@expo/vector-icons';
-import { removeAgent } from '../redux/slice/AgentSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Feather } from '@expo/vector-icons';
+
+import { removeAgent } from '../redux/slice/AgentSlice';
 
 export const StyledUserBar = () => {
   const dispatch = useDispatch();

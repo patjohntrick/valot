@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { appColor } from '../constant';
+
 import { StyledDot } from './StyledDot';
+import { appColor } from '../constant';
 
 type StyledLayoutProps = {
   children: ReactNode;

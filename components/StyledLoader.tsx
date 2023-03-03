@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text } from 'react-native';
+
 import { appColor } from '../constant';
 
 export const StyledLoader = () => {

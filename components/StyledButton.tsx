@@ -1,5 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { CSSProperties } from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { appColor } from '../constant';
 

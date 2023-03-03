@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { Strings, appColor } from '../constant';
 import { Octicons, Feather } from '@expo/vector-icons';
+
+import { Strings, appColor } from '../constant';
 
 type StyledDefaultHeaderProps = {
   headerTitleProp?: string;

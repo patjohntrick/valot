@@ -1,10 +1,11 @@
+import { View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { HomeScreen } from '../screens/Home/HomeScreen';
-import { DRAWER_STRINGS, SCREEN_NAMES, Strings, appColor } from '../constant/';
-import { StyledDefaultHeader } from '../components/StyledDefaultHeader';
 import { StyledBar, StyledUserBar } from '../components';
-import { View } from 'react-native';
+import { HomeScreen } from '../screens/Home/HomeScreen';
+import { StyledDefaultHeader } from '../components/StyledDefaultHeader';
+
+import { SCREEN_NAMES, appColor } from '../constant/';
 
 const Stack = createNativeStackNavigator();
 

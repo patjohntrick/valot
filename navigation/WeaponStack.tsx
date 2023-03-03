@@ -1,11 +1,11 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SCREEN_NAMES } from '../constant';
-import { WeaponsScreen } from '../screens/Weapon/WeaponsScreen';
-import { StyledDefaultHeader, StyledBar, StyledUserBar } from '../components';
-import { appColor } from '../constant';
 import { View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { StyledDefaultHeader, StyledBar, StyledUserBar } from '../components';
 import { WeaponScreen } from '../screens/Weapon/WeaponScreen';
 import { WeaponSkins } from '../screens/Weapon/WeaponSkins';
+import { WeaponsScreen } from '../screens/Weapon/WeaponsScreen';
+import { appColor, SCREEN_NAMES } from '../constant';
 
 const Stack = createNativeStackNavigator();
 

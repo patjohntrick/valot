@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SCREEN_NAMES } from '../constant';
+
 import { AgentStack } from './AgentStack';
+import { SCREEN_NAMES } from '../constant';
 
 const Stack = createNativeStackNavigator();
 

@@ -1,15 +1,10 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { HomeScreen } from '../screens/Home/HomeScreen';
+
 import { AgentStack } from './AgentStack';
 import { HomeStack } from './HomeStack';
-import { AgentsScreen } from '../screens/Agent/AgentsScreen';
-import { DRAWER_STRINGS, SCREEN_NAMES, Strings, appColor } from '../constant/';
-import { StyledDefaultHeader } from '../components/StyledDefaultHeader';
-import { Octicons, Feather } from '@expo/vector-icons';
-import { View, Text } from 'react-native';
 import { MapStack } from './MapStack';
 import { WeaponStack } from './WeaponStack';
+import { DRAWER_STRINGS, appColor } from '../constant/';
 
 const Drawer = createDrawerNavigator();
 

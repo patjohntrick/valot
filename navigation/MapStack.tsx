@@ -1,9 +1,9 @@
+import { View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SCREEN_NAMES } from '../constant';
+
 import { MapsScreen } from '../screens/Maps/MapsScreen';
 import { StyledDefaultHeader, StyledBar, StyledUserBar } from '../components';
-import { appColor } from '../constant';
-import { View } from 'react-native';
+import { appColor, SCREEN_NAMES } from '../constant';
 
 const Stack = createNativeStackNavigator();
 

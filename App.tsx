@@ -3,13 +3,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClient, QueryClientProvider } from 'react-query';
-
-import { MainNavigator } from './navigation/MainNavigator';
-// import { AgentStack } from './navigation/AgentStack';
-// import { MainStackNavigator } from './navigation/MainStackNavigator';
-import { appColor } from './constant';
 import { Provider } from 'react-redux';
 import { Store } from './redux/Store';
+
+import { MainNavigator } from './navigation/MainNavigator';
+import { appColor } from './constant';
 
 const queryClient = new QueryClient();
 
@@ -35,8 +33,6 @@ export default function App() {
             backgroundColor={appColor.sunburntCyclopsRed}
           />
           <MainNavigator />
-          {/* <MainStackNavigator /> */}
-          {/* <AgentStack /> */}
         </NavigationContainer>
       </QueryClientProvider>
     </Provider>

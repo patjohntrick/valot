@@ -1,4 +1,5 @@
-import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
+import { Text, TouchableHighlight, StyleSheet } from 'react-native';
+
 import { StyledLayout } from '../../components/StyledLayout';
 import { appColor } from '../../constant';
 

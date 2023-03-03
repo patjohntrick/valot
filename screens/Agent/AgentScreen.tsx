@@ -1,23 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
 import {
   StyledLayout,
   StyledLoader,
   StyledParagraph,
   StyledSubTitle,
 } from '../../components';
-import { useSelector } from 'react-redux';
-import { Strings, appColor } from '../../constant';
-import {
-  NavigationHelpers,
-  NavigationProp,
-  NavigationState,
-  useRoute,
-} from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
-import { setAgent, removeAgent } from '../../redux/slice/AgentSlice';
-import { SCREEN_NAMES } from '../../constant';
 import { getAgent } from '../../api/Api';
-import { useEffect } from 'react';
+import { Strings, appColor } from '../../constant';
 
 type AgentScreenProps = {
   navigation: any;
@@ -91,31 +82,18 @@ const styles = StyleSheet.create({
   },
   heroContainer: {
     position: 'relative',
-    // borderWidth: 1,
-    // borderColor: 'red',
     height: 300,
   },
   imgStyle: {
     width: '100%',
-    // height: '100%',
-    // width: 300,
     height: 290,
     position: 'absolute',
-    // bottom: 0,
-    // left: '-5%',
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   imgBackgroundStyle: {
     width: '100%',
-    // width: 300,
     height: 300,
     position: 'absolute',
-    // bottom: 0,
-    // left: '-5%',
     opacity: 0.1,
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   skillContainer: {
     backgroundColor: appColor.sunburntCyclopsRed,
@@ -133,8 +111,6 @@ const styles = StyleSheet.create({
   skillImg: {
     width: 60,
     height: 60,
-    // borderWidth: 1,
-    // borderColor: appColor.milkWhite,
     borderRadius: 5,
     marginHorizontal: 10,
   },

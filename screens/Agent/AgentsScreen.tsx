@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -6,23 +6,19 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
-import { StyledLayout } from '../../components/StyledLayout';
-import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
-import { DRAWER_STRINGS, Strings } from '../../constant';
-import { appColor, SCREEN_NAMES } from '../../constant';
-import { getAgents } from '../../api/Api';
-import { setAgent, removeAgent } from '../../redux/slice/AgentSlice';
-import { useRoute } from '@react-navigation/native';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
+import { getAgents } from '../../api/Api';
+import {
+  DRAWER_STRINGS,
+  Strings,
+  appColor,
+  SCREEN_NAMES,
+} from '../../constant';
 
 export const AgentsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getAgents();
-  const dispatch = useDispatch();
-  const agent = useSelector((state: any) => state.agent.agent);
-  const route = useRoute();
 
   const handleClick = (agentId: string) => {
     navigation.navigate(SCREEN_NAMES.AGENT_SCREEN, { agentId });
@@ -51,12 +47,10 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
                 <Image
                   style={styles.imgBackgroundStyle}
                   source={{ uri: item.background }}
-                  // resizeMode='contain'
                 />
                 <Image
                   style={styles.imgRoleBackgroundStyle}
                   source={{ uri: item.role.displayIcon }}
-                  // resizeMode='contain'
                 />
                 <Image
                   source={{
@@ -89,7 +83,6 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
         contentContainerStyle={{ alignItems: 'center', paddingBottom: 20 }}
       />
     </View>
-    // </View>
   );
 };
 
@@ -97,33 +90,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: appColor.eerieBlack,
-    // paddingHorizontal: 20,
     paddingTop: 15,
   },
   textContainer: {
     paddingHorizontal: 20,
   },
-  // listContainer: {
-  //   marginBottom: 200,
-  // },
   agentContainer: {
     marginTop: 10,
-    // justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
     paddingBottom: 30,
     paddingLeft: 20,
-    // borderWidth: 1,
-    // borderColor: 'red',
-    // flex: 1,
   },
   descContainer: {
     position: 'absolute',
     width: 230,
     left: 150,
     top: 40,
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   agentName: {
     fontFamily: 'Valorant-Font',
@@ -146,22 +129,14 @@ const styles = StyleSheet.create({
     marginRight: 3,
   },
   cardContainer: {
-    // backgroundColor: appColor.eerieBlack,
-    // borderWidth: 1,
-    // borderColor: appColor.milkWhite,
     height: 150,
     width: 380,
     marginTop: 40,
     borderRadius: 10,
-    // marginVertical: 7,
-    // borderWidth: 1,
-    // borderColor: 'red',
     overflow: 'visible',
     position: 'relative',
   },
   imgStyle: {
-    // width: '100%',
-    // height: '100%',
     width: 200,
     height: 200,
     position: 'absolute',

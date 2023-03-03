@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/18b6417c-a36f-47d6-b666-e23f2fff2717"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -34,6 +35,9 @@
         "projectId": "18b6417c-a36f-47d6-b666-e23f2fff2717"
       }
     },
-    "owner": "patrickkkk"
+    "owner": "patrickkkk",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   }
 }

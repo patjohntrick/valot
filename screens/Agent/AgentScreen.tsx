@@ -7,7 +7,6 @@ import {
   StyledParagraph,
   StyledSubTitle,
 } from '../../components';
-import { getAgent } from '../../api/Api';
 import { Strings, appColor } from '../../constant';
 
 type AgentScreenProps = {
@@ -15,28 +14,27 @@ type AgentScreenProps = {
 };
 
 export const AgentScreen = ({ navigation }: AgentScreenProps) => {
-  const { params } = useRoute();
-  const { data, error, isLoading } = getAgent(params?.agentId);
-
-  if (isLoading) return <StyledLoader />;
+  const {
+    params: { agent },
+  } = useRoute();
 
   return (
     <StyledLayout>
-      <Text style={styles.textStyle}>{data.data.displayName}</Text>
+      <Text style={styles.textStyle}>{agent.displayName}</Text>
       <View style={styles.heroContainer}>
         <Image
           style={styles.imgBackgroundStyle}
-          source={{ uri: data.data.background }}
+          source={{ uri: agent.background }}
           resizeMode='cover'
         />
         <Image
           style={styles.imgStyle}
-          source={{ uri: data.data.fullPortrait }}
+          source={{ uri: agent.fullPortrait }}
           resizeMode='contain'
         />
       </View>
-      <StyledSubTitle text={data.data.role.displayName} />
-      <StyledParagraph text={data.data.description} />
+      <StyledSubTitle text={agent.role.displayName} />
+      <StyledParagraph text={agent.description} />
       <View style={styles.skillContainer}>
         <StyledSubTitle text={Strings.ABILITIES} style={styles.titleStyle} />
         <StyledParagraph
@@ -44,7 +42,7 @@ export const AgentScreen = ({ navigation }: AgentScreenProps) => {
           style={styles.abilityDescStyle}
         />
         <View style={styles.skillInnerContainer}>
-          {data.data.abilities.map((ability: any, index: number) => {
+          {agent.abilities.map((ability: any, index: number) => {
             return (
               <TouchableOpacity key={index}>
                 <StyledSubTitle

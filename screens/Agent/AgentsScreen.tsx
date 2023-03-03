@@ -21,7 +21,8 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getAgents();
 
   const handleClick = (agentId: string) => {
-    navigation.navigate(SCREEN_NAMES.AGENT_SCREEN, { agentId });
+    const agent = data.data.filter((agent: any) => agent.uuid === agentId);
+    navigation.navigate(SCREEN_NAMES.AGENT_SCREEN, { agent: agent[0] });
   };
 
   if (isLoading) return <StyledLoader />;

@@ -7,15 +7,17 @@ type StyledButtonProps = {
   text: string;
   buttonStyle?: CSSProperties;
   textStyle?: CSSProperties;
+  onPress?: () => void;
 };
 
 export const StyledButton = ({
   text,
   buttonStyle,
   textStyle,
+  onPress,
 }: StyledButtonProps) => {
   return (
-    <TouchableOpacity style={[styles.container, buttonStyle]}>
+    <TouchableOpacity style={[styles.container, buttonStyle]} onPress={onPress}>
       <Text style={[styles.textStyle, textStyle]}>{text}</Text>
     </TouchableOpacity>
   );
@@ -24,6 +26,14 @@ export const StyledButton = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: appColor.sunburntCyclopsRed,
+    paddingVertical: 20,
+    borderRadius: 5,
+    marginTop: 20,
   },
-  textStyle: {},
+  textStyle: {
+    textAlign: 'center',
+    color: appColor.milkWhite,
+    fontFamily: 'Valorant-Font',
+    fontSize: 20,
+  },
 });

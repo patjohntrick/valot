@@ -5,6 +5,7 @@ import { StyledDefaultHeader, StyledBar, StyledUserBar } from '../components';
 import { appColor } from '../constant';
 import { View } from 'react-native';
 import { WeaponScreen } from '../screens/Weapon/WeaponScreen';
+import { WeaponSkins } from '../screens/Weapon/WeaponSkins';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ export const WeaponStack = ({ navigation }: { navigation: any }) => {
       <Stack.Screen
         name={SCREEN_NAMES.WEAPON_SCREEN}
         component={WeaponScreen}
+        options={{ headerLeft: undefined }}
+      />
+      <Stack.Screen
+        name={SCREEN_NAMES.WEAPON_SKINS_SCREEN}
+        component={WeaponSkins}
         options={{ headerLeft: undefined }}
       />
     </Stack.Navigator>

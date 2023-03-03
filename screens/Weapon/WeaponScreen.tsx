@@ -1,17 +1,14 @@
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
 import {
   StyledButton,
   StyledLayout,
-  StyledLoader,
   StyledParagraph,
   StyledSubTitle,
   StyledTitle,
 } from '../../components';
-import { getWeapon } from '../../api/Api';
-import { useRoute } from '@react-navigation/native';
-import { useState } from 'react';
 import { SCREEN_NAMES, Strings, appColor } from '../../constant';
-import { useEffect } from 'react';
 
 const { COST, CATEGORY, DAMAGE_RANGES, BODY_PARTS, SKINS } = Strings;
 
@@ -142,10 +139,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 120,
   },
-  damageInnerContainer: {
-    // borderWidth: 1,
-    // borderColor: 'red',
-  },
+  damageInnerContainer: {},
   damageContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -153,7 +147,6 @@ const styles = StyleSheet.create({
     backgroundColor: appColor.chineseBlack,
     borderRadius: 5,
     padding: 20,
-    // marginLeft:
   },
   damageValueContainer: {
     flexDirection: 'row',
@@ -161,7 +154,6 @@ const styles = StyleSheet.create({
   headerStyle: {
     fontSize: 20,
     color: appColor.sunburntCyclopsRed,
-    // marginHorizontal: 20,
   },
   dataValueTextStyle: {
     fontSize: 20,
@@ -170,16 +162,10 @@ const styles = StyleSheet.create({
     width: 60,
     overflow: 'hidden',
     textAlign: 'center',
-    // borderWidth: 1,
-    // borderColor: 'red',
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 10,
-  },
-  dataValue: {
-    // flexDirection: 'row',
-    // justifyContent: 'space-around',
   },
 });

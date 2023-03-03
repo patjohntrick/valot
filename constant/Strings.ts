@@ -7,6 +7,7 @@ export const SCREEN_NAMES = {
   WEAPONS_SCREEN: 'WeaponsScreen',
   AGENT_SCREEN: 'AgentScreen',
   WEAPON_SCREEN: 'WeaponScreen',
+  WEAPON_SKINS_SCREEN: 'WeaponSkinsScreen',
 };
 
 export const DRAWER_STRINGS = {
@@ -36,4 +37,6 @@ export const Strings = {
   CATEGORY: 'Category',
   DAMAGE_RANGES: 'Damage Ranges',
   BODY_PARTS: ['HEAD', 'BODY', 'LEG'],
+  SKINS: 'VIEW SKINS',
+  MELEE_ID: '2f59173c-4bed-b6c3-2191-dea9b58be9c7',
 };

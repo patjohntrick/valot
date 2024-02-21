@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -6,16 +6,16 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-} from 'react-native';
+} from "react-native";
 
-import { StyledLoader, StyledParagraph, StyledTitle } from '../../components';
-import { getAgents } from '../../api/Api';
+import { StyledLoader, StyledParagraph, StyledTitle } from "../../components";
+import { getAgents } from "../../api/Api";
 import {
   DRAWER_STRINGS,
   Strings,
   appColor,
   SCREEN_NAMES,
-} from '../../constant';
+} from "../../constant";
 
 export const AgentsScreen = ({ navigation }: { navigation: any }) => {
   const { data, error, isLoading } = getAgents();
@@ -58,7 +58,7 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
                     uri: item.fullPortrait,
                   }}
                   style={styles.imgStyle}
-                  resizeMode='cover'
+                  resizeMode="cover"
                 />
                 <View style={styles.descContainer}>
                   <Text style={styles.agentName}>{item.displayName}</Text>
@@ -70,7 +70,7 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
                           source={{ uri: ability.displayIcon }}
                           key={index}
                           style={styles.abilityIconStyle}
-                          resizeMode='cover'
+                          resizeMode="cover"
                         />
                       );
                     })}
@@ -81,7 +81,7 @@ export const AgentsScreen = ({ navigation }: { navigation: any }) => {
           );
         }}
         keyExtractor={(agent) => agent.uuid}
-        contentContainerStyle={{ alignItems: 'center', paddingBottom: 20 }}
+        contentContainerStyle={{ alignItems: "center", paddingBottom: 20 }}
       />
     </View>
   );
@@ -98,31 +98,31 @@ const styles = StyleSheet.create({
   },
   agentContainer: {
     marginTop: 10,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
     paddingBottom: 30,
     paddingLeft: 20,
   },
   descContainer: {
-    position: 'absolute',
+    position: "absolute",
     width: 230,
     left: 150,
     top: 40,
   },
   agentName: {
-    fontFamily: 'Valorant-Font',
+    fontFamily: "Valorant-Font",
     color: appColor.sunburntCyclopsRed,
     fontSize: 34,
   },
   roleStyle: {
-    fontFamily: 'Oswald-Light',
+    fontFamily: "Oswald-Light",
     fontSize: 16,
     color: appColor.milkWhite,
     marginTop: -5,
     marginBottom: 5,
   },
   abilityIconContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   abilityIconStyle: {
     width: 20,
@@ -134,30 +134,30 @@ const styles = StyleSheet.create({
     width: 380,
     marginTop: 40,
     borderRadius: 10,
-    overflow: 'visible',
-    position: 'relative',
+    overflow: "visible",
+    position: "relative",
   },
   imgStyle: {
     width: 200,
     height: 200,
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
-    left: '-5%',
+    left: "-5%",
   },
   imgBackgroundStyle: {
     width: 200,
     height: 150,
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
-    left: '-5%',
+    left: "-5%",
     opacity: 0.1,
   },
   imgRoleBackgroundStyle: {
     width: 80,
     height: 80,
-    position: 'absolute',
+    position: "absolute",
     bottom: 36,
-    right: '5%',
+    right: "5%",
     opacity: 0.1,
   },
 });
